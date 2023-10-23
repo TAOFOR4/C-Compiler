@@ -1,0 +1,157 @@
+//Empty function (S)
+void empty(){
+}
+
+
+// Test one integer paramter and return statement (S)
+int one_param_return(int x){
+  return x;
+}
+
+
+// Test two parameters (S)
+int two_params_return(int x, int y){
+  return x;
+}
+
+
+// Function call with no arguments (S)
+void call_no_args_call_statemant(){
+  empty();
+}
+
+
+// Function call with one argument (S)
+int call_one_args(){
+  return one_param_return(123);
+}
+
+
+// Function call with two arguments (S)
+int call_two_args_var_expr(int x){
+  return two_params_return(321,x);
+}
+
+ 
+// Print characters and return without value (S)
+void print_char_consts(){
+  putchar('A');
+  putchar('\n');
+  putchar('\t');
+  putchar('.');
+  putchar('\\');
+  putchar('\'');
+  putchar('\"');
+  putchar('\n');
+  return;
+}
+
+
+// Various arithmetic expressions (S)
+void arith_assignments(int x, int y, int z){
+  x = x + 1;
+  x = x - y * 8;
+  y = 12 % z / 3;
+}
+
+
+
+
+// Various logical operations (S)
+void logic_operations(int x, int y, int z){
+  x = y | z & 7; 
+  x = y || z && y | 1;
+  y = x > y && y < x || z >= y && ((x <= y) == 0);
+  z = x == y || x != z;
+}
+
+
+
+
+// If statement and if-then-else statement (S)
+int if_then_else(int x, int y){
+  if(x == y)
+    return y;
+  
+  if(x > 0){
+    if(x == 3){
+      x = x + 1;
+      return x;
+    }
+  }
+  else{
+    x = 7;
+    return x + 1;
+  }
+  return x;
+}
+
+
+// Correct parsing of dangling else (S)
+int if_then_dangeling_else(int x){
+  if(x > 0)
+    if(x < 10)
+      return x + 1;
+    else
+      return x + 2;
+  return x;
+}
+
+
+// While loop with break (S)
+int while_break(int x){
+  while(x < 10){
+    if(x == 7)
+      break;
+    x = x + 1;      
+  }
+  return x;
+}
+
+
+// postfix ++ and -- operations on identifiers (S)
+void pluspluss_minusminus(int x){
+  x++;
+  x--;
+}
+
+
+// Local variable definitions (S)
+void defining_local_variables(){
+  int x = 1;
+  int y = 5;
+}
+
+// Use of a global variable (S)
+int use_global(int x){
+  return global_x + x;
+}
+
+// Print a signed integer in decimal form (S)
+void print_int(int x){
+  if(x < 0){
+    putchar('-');
+    x = x * (0 - 1);  
+  }
+  int i = 1000000;
+  while(i != 0){
+    if(x >= i || (x == 0 && i == 1))
+      putchar('0' + x / i);
+    x = x % i;
+    i = i / 10;
+  }
+}
+
+
+// Print integer line (S)
+void print_int_ln(int x){
+  print_int(x);
+  putchar('\n');
+}
+
+// Main function (S) 
+int main(){
+  test_recursive_data_structures();
+  print_test_strings();
+  return 0;
+}
